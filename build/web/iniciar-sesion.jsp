@@ -13,8 +13,8 @@
     </head>
 
     <body class="lime lighten-2">
-        <nav class="pushpin-nav z-depth-0" data-target="primera">
-            <div class="nav-wrapper lime lighten-2">
+        <nav class="pushpin-nav" data-target="primera">
+            <div class="nav-wrapper lime darken-1">
                 <div class="col s12">
                     <div id="principal-nav">
                         <a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i>MallBIT</a>
@@ -77,6 +77,7 @@
                 <br>
 
             </div>
+
         </div>
 
 
