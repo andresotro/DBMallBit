@@ -13,10 +13,17 @@
     </head>
 
     <body class="lime lighten-2">
-        <div class="nav-wrapper lime darken-1" id="isbl">
-            <center><a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i> MallBIT</a></center>
-        </div>
-        
+        <nav class="pushpin-nav z-depth-0" data-target="primera">
+            <div class="nav-wrapper lime lighten-2">
+                <div class="col s12">
+                    <div id="principal-nav">
+                        <a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i>MallBIT</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
         <div class="block">
             <div class="card-panel">
                 <form action="ControladorCliente" method="post">
@@ -40,31 +47,28 @@
                         <label for="contraseña">Contraseña</label>
                     </div>
                     <div class="center-align">
-                        <%
-                            
-                        %>
                         <button class="waves-effect waves-light btn lime lighten-2 black-text" type="submit">Iniciar sesión</button>
                     </div>
                 </form>
                 <br>
-                <% String estado =  (String) request.getAttribute("RESULTADO"); %>
+                <% String estado = (String) request.getAttribute("RESULTADO"); %>
                 <% if (estado == "incorrecto") {%>
-                    <div class="center-align">
-                        <style>
-                            #usuario,#contraseña{
-                                border-color: red;
-                            }
-                        </style>
-                        <p style="color: red">Usuario o Contraseña Incorrectos</p>
-                    </div>
+                <div class="center-align">
+                    <style>
+                        #usuario,#contraseña{
+                            border-color: red;
+                        }
+                    </style>
+                    <p style="color: red">Usuario o Contraseña Incorrectos</p>
+                </div>
                 <% } else {%>
                 <% if (estado == "indefinido") {%>
-                        <style>
-                            #register{
-                                font-size: 18px;
-                                text-decoration: underline;
-                            }
-                        </style>
+                <style>
+                    #register{
+                        font-size: 18px;
+                        text-decoration: underline;
+                    }
+                </style>
                 <% }%>
                 <% }%>
                 <div class="center-align" id="register">

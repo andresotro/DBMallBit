@@ -17,9 +17,16 @@
     </head>
 
     <body class="lime lighten-2">
-        <div class="nav-wrapper lime darken-1" id="isbl">
-            <center><a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i> MallBIT</a></center>
-        </div>
+        <nav class="pushpin-nav z-depth-0" data-target="primera">
+            <div class="nav-wrapper lime lighten-2">
+                <div class="col s12">
+                    <div id="principal-nav">
+                        <a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i>MallBIT</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
         <div class="block">
             <div class="card-panel" id="cardp">
