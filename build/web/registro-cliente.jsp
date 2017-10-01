@@ -64,6 +64,17 @@
                                 <label for="fecha">Fecha de nacimiento</label>
                             </div>
                         </div>
+                        
+                        <div class="row">
+                            <div class="col s6 input-field">
+                                <input id="identificacion" name="identificacion" type="text" class="validate">
+                                <label for="identificacion">N° identificación</label>
+                            </div>
+                            <div class="col s6 input-field">
+                                <input id="telefono" name="telefono" type="number" class="validate">
+                                <label for="telefono">Teléfono</label>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col s4 input-field">
                                 <input id="usuario" name="usuario" type="text" class="validate">
