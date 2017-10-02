@@ -16,6 +16,7 @@
         <title>Registro Cliente</title>
     </head>
 
+<<<<<<< HEAD
     <body id="cuerpo">
         <div class="nav-wrapper lime darken-1" id="isbl">
             <center><a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i> MallBIT</a></center>
@@ -23,6 +24,22 @@
 
         <div class="block" id="bloque">
             <div class="card-panel" id="cardp">
+=======
+    <body class="lime lighten-2">
+        <nav class="pushpin-nav" data-target="primera">
+            <div class="nav-wrapper lime darken-1">
+                <div class="col s12">
+                    <div id="principal-nav">
+                        <a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i>MallBIT</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="block">
+            <div class="card-panel">
+>>>>>>> 79a73168e8ac67fa58109c6ad154b7f91afc4b8d
                 <div class="row">
                     <div class="col s10">
                         <p style="font-size: 30px" id="titleis">Registro</p>
@@ -57,6 +74,17 @@
                             <label for="fecha">Fecha de nacimiento</label>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col s6 input-field">
+                            <input id="identificacion" name="identificacion" type="tel" maxlength="11" class="validate">
+                            <label for="identificacion">N° identificación</label>
+                        </div>
+                        <div class="col s6 input-field">
+                            <input id="telefono" name="telefono" type="tel" maxlength="10" class="validate">
+                            <label for="telefono">Teléfono</label>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col s4 input-field">
                             <input id="usuario" name="usuario" type="text" class="validate">
@@ -70,8 +98,10 @@
                         <div class="input-field col s4">
                             <select name="genero">
                                 <option value="" disabled selected>Género</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
+                                <% List<Genero> generos = (List<Genero>) request.getAttribute("LISTAGENEROS"); %>
+                                <% for (Genero g : generos) {%>
+                                <option value="<%= g.getIdGenero()%>"><%= g.getTipo()%></option>
+                                <% }%>
                             </select>
                         </div>
                     </div>
@@ -105,6 +135,16 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col s6 input-field">
+                            <input id="identificacion" name="identificacion" type="tel" maxlength="11" class="validate">
+                            <label for="identificacion">N° identificación</label>
+                        </div>
+                        <div class="col s6 input-field">
+                            <input id="telefono" name="telefono" maxlength="10" type="tel"  maxlength="10"  class="validate">
+                            <label for="telefono">Teléfono</label>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col s4 input-field">
                             <input id="usuario" name="usuario" type="text" class="validate" >
                             <label for="usuario">Usuario</label>
@@ -116,8 +156,10 @@
                         <div class="input-field col s4">
                             <select name="genero">
                                 <option value="" disabled selected>Género</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
+                                <% List<Genero> generos = (List<Genero>) request.getAttribute("LISTAGENEROS"); %>
+                                <% for (Genero g : generos) {%>
+                                <option value="<%= g.getIdGenero()%>"><%= g.getTipo()%></option>
+                                <% }%>
                             </select>
                         </div>
                     </div>
@@ -128,8 +170,8 @@
                     </div>
                 </form> 
                 <% }%>
-
             </div>
+
         </div>
         <!--Import jQuery before materialize.js-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
