@@ -3,15 +3,15 @@ package com.mallbit.genero;
 public class Genero {
 	
 	private int idGenero;
-	private String genero;
+	private String tipo;
 	
 	public Genero(int idGenero, String genero) {
 		this.idGenero = idGenero;
-		this.genero = genero;
+		this.tipo = genero;
 	}
 	
 	public Genero(String genero) {
-		this.genero = genero;
+		this.tipo = genero;
 	}
 
 	public int getIdGenero() {
@@ -22,17 +22,12 @@ public class Genero {
 		this.idGenero = idGenero;
 	}
 
-	public String getGenero() {
-		return genero;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setGenero(String genero) {
-		this.genero = genero;
-	}
-
-	@Override
-	public String toString() {
-		return "Genero [idGenero=" + idGenero + ", genero=" + genero + "]";
+	public void setTipo(String genero) {
+		this.tipo = genero;
 	}	
 	
 }

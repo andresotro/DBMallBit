@@ -87,9 +87,10 @@
                         </div>
                         <div class="input-field col s4">
                             <select name="genero">
-                                <option value="" disabled selected>Género</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
+                                <% List<Genero> generos = (List<Genero>) request.getAttribute("LISTAGENEROS"); %>
+                                <% for (Genero g : generos) {%>
+                                <option value="<%= g.getIdGenero()%>"><%= g.getTipo()%></option>
+                                <% }%>
                             </select>
                         </div>
                     </div>
@@ -142,10 +143,10 @@
                             <input id="contraseña" name="password" type="password" class="validate" value="<%= estado[4]%>">
                         </div>
                         <div class="input-field col s4">
-                            <select name="genero">
-                                <option value="" disabled selected>Género</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
+                                <% List<Genero> generos = (List<Genero>) request.getAttribute("LISTAGENEROS"); %>
+                                <% for (Genero g : generos) {%>
+                                <option value="<%= g.getIdGenero()%>"><%= g.getTipo()%></option>
+                                <% }%>
                             </select>
                         </div>
                     </div>

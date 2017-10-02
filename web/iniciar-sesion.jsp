@@ -72,7 +72,7 @@
                 <% }%>
                 <% }%>
                 <div class="center-align" id="register">
-                    ¿No tienes una cuenta?<a href="registro-cliente.jsp"> Regístrate</a>
+                    ¿No tienes una cuenta?<a href="ControladorGenero"> Regístrate</a>
                 </div>
                 <br>
 
