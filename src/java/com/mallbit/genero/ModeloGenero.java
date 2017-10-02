@@ -32,9 +32,9 @@ public class ModeloGenero {
         while (resultSet.next()) {
         	
             int id = resultSet.getInt("IDGenero");
-            String nombre = resultSet.getString("Genero");
+            String tipo = resultSet.getString("Tipo");
 
-            Genero genero = new Genero(id, nombre);
+            Genero genero = new Genero(id, tipo);
             generos.add(genero);
 
         }
