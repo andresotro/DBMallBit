@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-y: hidden">
     <head>
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,7 +12,7 @@
         <title>Iniciar Sesión</title>
     </head>
 
-    <body class="lime lighten-2">
+    <body id="cuerpo">
         <div class="nav-wrapper lime darken-1" id="isbl">
             <center><a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i> MallBIT</a></center>
         </div>
