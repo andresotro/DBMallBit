@@ -3,7 +3,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html lang="en" style="overflow-y: hidden">
+<html lang="en">
 
     <head>
         <!--Import Google Icon Font-->
