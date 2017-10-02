@@ -34,14 +34,12 @@ public class ModeloCliente {
 	            String nombre = resultSet.getString("Nombre");
 	            String apellido = resultSet.getString("Apellido");
 	            String correo = resultSet.getString("Correo");
-                    int identificacion = resultSet.getInt("identificacion");
-                    int telefono = resultSet.getInt("telefono");
 	            String usuario = resultSet.getString("Usuario");
 	            String contraseña = resultSet.getString("Password");
 	            Date fechaNacimiento = resultSet.getDate("FechaNacimiento");
 	            int idGenero = resultSet.getInt("IDGenero");
 
-	            clientes.add(new Cliente(id, nombre, apellido, correo, identificacion, telefono, usuario, contraseña, fechaNacimiento, idGenero));
+	            clientes.add(new Cliente(id, nombre, apellido, correo, usuario, contraseña, fechaNacimiento, idGenero));
 
 	        }
 	        return clientes;
@@ -57,20 +55,18 @@ public class ModeloCliente {
 
 	        //Crear sentencia SQL y statement
 	        String sentenciaSQL = "INSERT INTO cliente "
-	                + "(Nombre,Apellido,Correo,Identificacion,Telefono,Usuario,Password,FechaNacimiento,IDGenero) VALUES (?,?,?,?,?,?,?,?,?)";
+	                + "(Nombre,Apellido,Correo,Usuario,Password,FechaNacimiento,IDGenero) VALUES (?,?,?,?,?,?,?)";
 	        preparedStatement = connection.prepareStatement(sentenciaSQL);
 	        
 	        //Pasar valores del objeto cliente a la sentenciaSQL
 	        preparedStatement.setString(1, cliente.getNombre());
 	        preparedStatement.setString(2, cliente.getApellido());
 	        preparedStatement.setString(3, cliente.getCorreo());
-                preparedStatement.setInt(4, cliente.getIdentificacion());
-                preparedStatement.setInt(5, cliente.getTelefono());
-	        preparedStatement.setString(6, cliente.getUsuario());
-	        preparedStatement.setString(7, cliente.getContraseña());
+	        preparedStatement.setString(4, cliente.getUsuario());
+	        preparedStatement.setString(5, cliente.getContraseña());
 	        SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
-	        preparedStatement.setString(8, formatDate.format(cliente.getFechaNacimiento()));
-	        preparedStatement.setInt(9, cliente.getIdGenero());
+	        preparedStatement.setString(6, formatDate.format(cliente.getFechaNacimiento()));
+	        preparedStatement.setInt(7, cliente.getIdGenero());
 	        
 	        preparedStatement.execute();
 	    }
