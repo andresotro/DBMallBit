@@ -129,7 +129,7 @@ footer {
 }
 
 .block {
-    padding: 0px 400px;
+    padding: 100px 400px;
     margin-top: 2%;
 }
 
@@ -369,4 +369,8 @@ html, body {
 
 #cuerpo{
     background-image: url(Fondo.jpg);
+    height: 1000px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -34,7 +34,7 @@
                                 <li><a id="search-nav-button" href="#search-nav"><i class="material-icons left">search</i>Buscar</a></li>
                                     <%} else {%>
                                 <li><a id="search-nav-button" href="#search-nav"><i class="material-icons left">search</i>Buscar</a></li>
-                                    <li><a href="index.jsp"><i class="material-icons left">people</i><%= cliente.getNombre()%></a></li>
+                                    <li><a href="interfaz-usuario.jsp"><i class="material-icons left">people</i><%= cliente.getNombre()%></a></li>
                                 <li><a href="sass.html"><i class="material-icons left">shopping_cart</i>Mis Compras</a></li>
                                 <li><a href="index.jsp" onclick="<% session.invalidate(); %>"><i class="material-icons left">exit_to_app</i>Salir</a></li>
                                     <% }%>
