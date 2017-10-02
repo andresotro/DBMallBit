@@ -13,33 +13,27 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private String correo;
-    private int identificacion;
-    private int telefono;
     private String usuario;
     private String contraseña;
     private Date fechaNacimiento;
     private int idGenero;
 
-    public Cliente(int id, String nombre, String apellido, String correo,int identificacion,int telefono, String usuario, String contraseña, Date fechaNacimiento, int idGenero) {
+    public Cliente(int id, String nombre, String apellido, String correo, String usuario, String contraseña, Date fechaNacimiento, int idGenero) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.usuario = usuario;
-        this.identificacion = identificacion;
-        this.telefono = telefono;
         this.contraseña = contraseña;
         this.fechaNacimiento = fechaNacimiento;
         this.idGenero = idGenero;
     }
 
-    public Cliente(String nombre, String apellido, String correo,int identificacion,int telefono, String usuario, String contraseña, Date fechaNacimiento, int idGenero) {
+    public Cliente(String nombre, String apellido, String correo, String usuario, String contraseña, Date fechaNacimiento, int idGenero) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.usuario = usuario;
-        this.identificacion = identificacion;
-        this.telefono = telefono;
         this.contraseña = contraseña;
         this.fechaNacimiento = fechaNacimiento;
         this.idGenero = idGenero;
@@ -76,23 +70,6 @@ public class Cliente {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
-    public int getIdentificacion() {
-        return identificacion;
-    }
-
-    public void setIdentificacion(int identificacion) {
-        this.identificacion = identificacion;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-    
 
     public String getUsuario() {
         return usuario;
