@@ -21,7 +21,7 @@
             <center><a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i> MallBIT</a></center>
         </div>
 
-        <div class="block" id="bloque">
+        <div class="block">
             <div class="card-panel" id="cardp">
                 <div class="row">
                     <div class="col s10">
