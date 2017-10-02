@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-y: hidden">
     <head>
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,18 +12,10 @@
         <title>Iniciar Sesión</title>
     </head>
 
-    <body class="lime lighten-2">
-        <nav class="pushpin-nav" data-target="primera">
-            <div class="nav-wrapper lime darken-1">
-                <div class="col s12">
-                    <div id="principal-nav">
-                        <a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i>MallBIT</a>
-                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
+    <body id="cuerpo">
+        <div class="nav-wrapper lime darken-1" id="isbl">
+            <center><a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i> MallBIT</a></center>
+        </div>
         <div class="block">
             <div class="card-panel">
                 <form action="ControladorCliente" method="post">
