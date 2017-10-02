@@ -30,7 +30,7 @@
         </nav>
 
         <div class="block">
-            <div class="card-panel" id="cardp">
+            <div class="card-panel">
                 <div class="row">
                     <div class="col s10">
                         <p style="font-size: 30px" id="titleis">Registro</p>
