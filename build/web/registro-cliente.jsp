@@ -3,7 +3,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-y: auto">
 
     <head>
         <!--Import Google Icon Font-->
@@ -16,7 +16,7 @@
         <title>Registro Cliente</title>
     </head>
 
-    <body id="cuerpo">
+    <body id="cuerpo" class="lime darken-1">
         
         <nav class="pushpin-nav" data-target="primera">
             <div class="nav-wrapper lime darken-1">
@@ -29,7 +29,7 @@
             </div>
         </nav>
 
-        <div class="block">
+        <div class="block" id="blockrc">
             <div class="card-panel">
                 <div class="row">
                     <div class="col s10">

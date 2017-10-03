@@ -100,12 +100,12 @@ public class ControladorCliente extends HttpServlet {
             }  
             
             //Se envia un request al jsp correspondiente segun el caso
-            if(existe.equals("existe")){
+            /*if(existe.equals("existe")){
                 String[] parametros= {existe,nombre,apellido,correo,contraseña,request.getParameter("fechaNacimiento"),request.getParameter("genero")};
                 request.setAttribute("ESTADO", parametros);
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("/registro-cliente.jsp");
                 requestDispatcher.forward(request, response);
-            }else{
+            }else{*/
                 Cliente cliente = new Cliente(nombre, apellido, correo, identificacion, telefono, usuario, contraseña, fechaNacimiento, idGenero);
                 
                 //Enviar objeto al modelo para guardar en la Base de Datos
@@ -114,7 +114,7 @@ public class ControladorCliente extends HttpServlet {
                 session.setAttribute("CLIENTE_SESSION", cliente);
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
                 requestDispatcher.forward(request, response);
-            }
+            /*}*/
 
         } catch (Exception ex) {    
             
