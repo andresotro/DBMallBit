@@ -1,4 +1,4 @@
-package com.mallbit.cliente;
+    package com.mallbit.cliente;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -83,6 +83,8 @@ public class ControladorCliente extends HttpServlet {
             String apellido = request.getParameter("apellido");
             String usuario = request.getParameter("usuario");
             String correo = request.getParameter("correo");
+            int identificacion = Integer.parseInt(request.getParameter("identificacion"));
+            int telefono = Integer.parseInt(request.getParameter("telefono"));
             String contraseña = request.getParameter("password");
             int idGenero = Integer.parseInt(request.getParameter("genero"));
             
@@ -104,7 +106,7 @@ public class ControladorCliente extends HttpServlet {
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("/registro-cliente.jsp");
                 requestDispatcher.forward(request, response);
             }else{
-                Cliente cliente = new Cliente(nombre, apellido, correo, usuario, contraseña, fechaNacimiento, idGenero);
+                Cliente cliente = new Cliente(nombre, apellido, correo, identificacion, telefono, usuario, contraseña, fechaNacimiento, idGenero);
                 
                 //Enviar objeto al modelo para guardar en la Base de Datos
                 modeloCliente.agregarClienteDB(cliente);
@@ -182,7 +184,7 @@ public class ControladorCliente extends HttpServlet {
             }
 
         } catch (Exception ex) {
-            
+            System.out.println(ex.getMessage());
         }
 
     }
