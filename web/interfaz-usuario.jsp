@@ -1,3 +1,5 @@
+<%@page import="com.mallbit.cliente.*"%>
+<%@page import="java.util.List" %>
 <!DOCTYPE html>
 <html lang="en" style="overflow-y: hidden">
 
@@ -27,31 +29,26 @@
                                 <li><a href="index.jsp" onclick="<% session.invalidate(); %>"><i class="material-icons left">exit_to_app</i>Salir</a></li>
                             </ul>
                         </div>
-
-                        <div style="height: 56px;" id="search-nav">
-                            <div class="row">
-                                <div class="col s10">
-                                    <div class="input-field black-text">
-                                        <i class="material-icons prefix">search</i>
-                                        <input placeholder="Haz click para buscar" id="icon_prefix" type="text" class="validate">
-                                    </div>
-                                </div>
-                                <div class="col s2">
-                                    <ul class="right hide-on-med-and-down">
-                                        <li><a id="search-nav-cancel" href="#"><i class="material-icons left black-text">cancel</i>Cancelar</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </nav>
 
             <div style="height: 64px;"></div>
         </div>
-        <div class="row" id="main">
-            <div class="col s8">
-                <div class="block" id="bloque">
+        <% ModeloCliente m = new ModeloCliente();
+            List<Cliente> clientes;
+            Cliente interfaz = null;
+            clientes = m.obtenerClientesDB();
+            for(Cliente c : clientes){
+                if(c.getUsuario().equals(request.getParameter("nombre"))){
+                    interfaz = c;
+                    break;
+                }
+            }
+        %>   
+        <div class="row">
+            <div class="col s8" >
+                <div class="block" id="blockrc">
                     <div class="card-panel" id="cardp">
                         <div class="center-align" id="cardtop">
                             <p id="titleis2">Alejandro Cubillos Perdigon</p>
@@ -60,19 +57,27 @@
                         <div id="datos">
                             <div id="datapair">
                                 <p id="datatitle"><b>Usuario</b></p>
-                                <div class="right-align" id="data">Alejo</div>
+                                <div class="right-align" id="data"><%= interfaz.getUsuario()%></div>
                             </div>
                             <div id="datapair">
                                 <p id="datatitle"><b>Correo</b></p>
-                                <div class="right-align" id="data">alejocp236@hotmail.com</div>
+                                <div class="right-align" id="data"><%= interfaz.getCorreo()%></div>
+                            </div >
+                            <div id="datapair">
+                                <p id="datatitle"><b>Identificación</b></p>
+                                <div class="right-align" id="data"><%= interfaz.getIdentificacion()%></div>
+                            </div >
+                            <div id="datapair">
+                                <p id="datatitle"><b>Teléfono</b></p>
+                                <div class="right-align" id="data"><%= interfaz.getTelefono()%></div>
                             </div >
                             <div id="datapair">
                                 <p id="datatitle"><b>Fecha de Nacimiento</b></p>
-                                <div class="right-align" id="data">16/03/1999</div>
+                                <div class="right-align" id="data"><%= interfaz.getFechaNacimiento()%></div>
                             </div>
                             <div id="datapair">
-                                <p id="datatitle"><b>GÃ©nero</b></p>
-                                <div class="right-align" id="data">Masculino</div>
+                                <p id="datatitle"><b>Género</b></p>
+                                <div class="right-align" id="data"><% if(interfaz.getIdGenero()==1){%>Masculino<%}else{%>Femenino<%}%></div>
                             </div>
                         </div>
                         <div id="puntos">
