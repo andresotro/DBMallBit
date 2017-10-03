@@ -138,6 +138,11 @@ footer {
     margin-right: 20%;
     left: 8%;
     right: 8%;
+}  
+    
+.block {
+    padding: 100px 400px 100px 400px;
+    margin-top: 2%;
 }
 
 #blockrc {
