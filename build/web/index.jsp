@@ -26,7 +26,7 @@
                         <div id="principal-nav">
                             <a href="#" class="brand-logo"><i class="material-icons">shopping_basket</i>MallBIT</a>
                             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                                <% Cliente cliente = (Cliente) session.getAttribute("CLIENTE_SESSION"); %>
+                                <% Cliente cliente = (Cliente) session.getAttribute("CLIENTE_INDEX"); %>
                                 <% if (cliente == null) { %>
                                 <li><a href="iniciar-sesion-cliente.jsp"><i class="material-icons left">people</i>Acceder</a></li>
                                 <li><a href="iniciar-sesion-vendedor.jsp"><i class="material-icons left">local_shipping</i>Vender</a></li>
@@ -34,10 +34,16 @@
                                 <li><a id="search-nav-button" href="#search-nav"><i class="material-icons left">search</i>Buscar</a></li>
                                     <%} else {%>
                                 <li><a id="search-nav-button" href="#search-nav"><i class="material-icons left">search</i>Buscar</a></li>
-                                <li><a href="interfaz-usuario.jsp?nombre=<%= cliente.getUsuario()%>"><i class="material-icons left">people</i><%= cliente.getNombre()%></a></li>
+                                <li>
+                                    <form method="post" action="ControladorCliente" id="iu">
+                                        <input type="hidden" name="instruccion" value="sesion">
+                                        <input type="hidden" name="user" value="<%= cliente.getUsuario()%>">
+                                        <a onclick="document.getElementById('iu').submit()"><i class="material-icons left">people</i><%= cliente.getNombre()%></a>
+                                    </form>
+                                </li>
                                 <li><a href="sass.html"><i class="material-icons left">shopping_cart</i>Mis Compras</a></li>
                                 <li><a href="index.jsp" onclick="<% session.invalidate(); %>"><i class="material-icons left">exit_to_app</i>Salir</a></li>
-                                    <% }%>
+                                <% }%>
                             </ul>
                         </div>
 

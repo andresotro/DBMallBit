@@ -42,8 +42,13 @@ public class ControladorCliente extends HttpServlet {
                 validarClienteDB(request, response);
                 break;
             case "actualizarCliente":
+                actualizarClienteDB(request, response);
                 break;
             case "borrarCliente":
+                borrarClienteDB(request, response);
+                break;
+            case "sesion":
+                sesion(request, response);
                 break;
             default:
                 break;
@@ -105,14 +110,16 @@ public class ControladorCliente extends HttpServlet {
 
             //Enviar objeto al modelo para guardar en la Base de Datos
             modeloCliente.agregarClienteDB(cliente);
+
             HttpSession session = request.getSession();
             session.setAttribute("CLIENTE_SESSION", cliente);
+
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
             requestDispatcher.forward(request, response);
             /*}*/
 
         } catch (Exception ex) {
-            ex.printStackTrace();
+
         }
 
     }
@@ -131,9 +138,10 @@ public class ControladorCliente extends HttpServlet {
             RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
             dispatcher.forward(request, response);
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
+
     }
 
     private void validarClienteDB(HttpServletRequest request, HttpServletResponse response) {
@@ -163,8 +171,8 @@ public class ControladorCliente extends HttpServlet {
 
             switch (estado) {
                 case "correcto":
-                    HttpSession session = request.getSession();
-                    session.setAttribute("CLIENTE_SESSION", c);
+                    HttpSession session = request.getSession(false);
+                    session.setAttribute("CLIENTE_INDEX", c);
                     RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
                     requestDispatcher.forward(request, response);
                     break;
@@ -184,6 +192,77 @@ public class ControladorCliente extends HttpServlet {
             System.out.println(ex.getMessage());
         }
 
+    }
+
+    private void actualizarClienteDB(HttpServletRequest request, HttpServletResponse response) {
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String usuario = request.getParameter("usuario");
+        String correo = request.getParameter("correo");
+        int telefono = 0;
+        if (!request.getParameter("telefono").equals("")) {
+            telefono = Integer.parseInt(request.getParameter("telefono"));
+        }
+        String password = request.getParameter("password");
+        Cliente cliente = new Cliente(nombre, apellido, correo, 0, telefono, usuario, password, null, 0);
+        try {
+            modeloCliente.actualizarClienteDB(cliente);
+
+            Cliente buscado = null;
+
+            List<Cliente> clientes = modeloCliente.obtenerClientesDB();
+            for (Cliente cl : clientes) {
+                if (cl.getUsuario().equals(usuario)) {
+                    buscado = cl;
+                    break;
+                }
+            }
+
+            request.setAttribute("ClienteInterfazA", buscado);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/interfaz-usuario.jsp");
+            requestDispatcher.forward(request, response);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void sesion(HttpServletRequest request, HttpServletResponse response) {
+        String usuario = request.getParameter("user");
+        Cliente c = null;
+        try {
+            List<Cliente> clientes = modeloCliente.obtenerClientesDB();
+            for (Cliente cliente : clientes) {
+                if (cliente.getUsuario().equals(usuario)) {
+                    c = cliente;
+                    break;
+                }
+            }
+            request.setAttribute("ClienteInterfazS", c);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/interfaz-usuario.jsp");
+            requestDispatcher.forward(request, response);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void borrarClienteDB(HttpServletRequest request, HttpServletResponse response) {
+        String usuario = request.getParameter("usuario");
+        try {
+            Cliente c = null;
+            List<Cliente> clientes = modeloCliente.obtenerClientesDB();
+            for (Cliente cliente : clientes) {
+                if (cliente.getUsuario().equals(usuario)) {
+                    c = cliente;
+                    break;
+                }
+            }
+            modeloCliente.borrarClienteDB(c);
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
+            requestDispatcher.forward(request, response);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
 }

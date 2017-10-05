@@ -74,5 +74,68 @@ public class ModeloCliente {
 
         preparedStatement.execute();
     }
+    
+    public void actualizarClienteDB(Cliente cliente) throws SQLException {
+        Connection connection;
+        PreparedStatement nombre;
+        PreparedStatement apellido;
+        PreparedStatement telefono;
+        PreparedStatement correo;
+        PreparedStatement password;
+
+        //Establecer la conexión
+        connection = ConexionDB.conectar();
+
+        //Crear sentencia SQL y statement en caso de que los valores no sean nulos y ejecutar
+        if (!cliente.getNombre().equals("")) {
+            String sentenciaNombre = "UPDATE cliente SET Nombre=? WHERE Usuario=?";
+            nombre = connection.prepareStatement(sentenciaNombre);
+            nombre.setString(1, cliente.getNombre());
+            nombre.setString(2, cliente.getUsuario());
+            nombre.executeUpdate();
+        }
+        if (!cliente.getApellido().equals("")) {
+            String sentenciaApellido = "UPDATE cliente SET Apellido=? WHERE Usuario=?";
+            apellido = connection.prepareStatement(sentenciaApellido);
+            apellido.setString(1, cliente.getApellido());
+            apellido.setString(2, cliente.getUsuario());
+            apellido.executeUpdate();
+        }
+        if (cliente.getTelefono() != 0) {
+            String sentenciaTelefono = "UPDATE cliente SET Telefono=? WHERE Usuario=?";
+            telefono = connection.prepareStatement(sentenciaTelefono);
+            telefono.setLong(1, cliente.getTelefono());
+            telefono.setString(2, cliente.getUsuario());
+            telefono.executeUpdate();
+        }
+        if (!cliente.getCorreo().equals("")) {
+            String sentenciaCorreo = "UPDATE cliente SET Correo=? WHERE Usuario=?";
+            correo = connection.prepareStatement(sentenciaCorreo);
+            correo.setString(1, cliente.getCorreo());
+            correo.setString(2, cliente.getUsuario());
+            correo.executeUpdate();
+        }
+        if (!cliente.getContraseña().equals("")) {
+            String sentenciaPassword = "UPDATE cliente SET Password=? WHERE Usuario=?";
+            password = connection.prepareStatement(sentenciaPassword);
+            password.setString(1, cliente.getContraseña());
+            password.setString(2, cliente.getUsuario());
+            password.executeUpdate();
+        }
+    }
+
+    public void borrarClienteDB(Cliente c) throws SQLException {
+        Connection connection;
+        PreparedStatement borrar;
+
+        //Establecer la conexion
+        connection = ConexionDB.conectar();
+
+        //Crear sentencia SQL y statement y ejecutar
+        String sentencia = "DELETE FROM cliente WHERE Usuario=?";
+        borrar = connection.prepareStatement(sentencia);
+        borrar.setString(1, c.getUsuario());
+        borrar.execute();
+    }
 
 }
