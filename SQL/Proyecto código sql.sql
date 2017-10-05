@@ -7,11 +7,11 @@ create table cliente(
     Apellido varchar(50) not null,
     FechaNacimiento date not null, 
     Correo varchar(100) not null, 
-    Identificacion bigint(11) not null unique, 
-    IDGenero int(11), 
+    Identificacion bigint(11) not null unique,
     Telefono bigint(10) not null, 
     Usuario varchar(50) not null, 
-    Password varchar(50), 
+    Password varchar(50),
+    IDGenero int(11),
     Primary Key(IDCliente)
 );
 create table genero(
@@ -49,13 +49,15 @@ create table local(
 );
 create table vendedor(
     IDVendedor int(11) not null, 
-    Nombre varchar(100) not null, 
+    Nombre varchar(100) not null,
+    Apellido varchar(100) not null, 
     FechaNacimiento date not null, 
-    Email varchar(100) not null, 
+    Correo varchar(100) not null, 
     Identificacion bigint(11) not null unique, 
     Telefono bigint(10) not null, 
     Usuario varchar(50) not null, 
-    Password varchar(50), 
+    Password varchar(50) not null,
+    IDGenero int(11),
     Primary Key(IDVendedor)
 );
 create table envio(
@@ -109,6 +111,7 @@ alter table envio add foreign key(IDEstado) references estado(IDEstado);
 alter table envio add foreign key(IDCompra) references compra(IDCompra);
 alter table envio add foreign key(IDVendedor) references vendedor(IDVendedor);
 alter table cliente add foreign key(IDGenero) references genero(IDGenero);
+alter table Vendedor add foreign key(IDGenero) references genero(IDGenero);
 alter table premio add foreign key(IDAdministrador) references administrador(IDAdministrador);
 alter table clientepremio add foreign key(IDCliente) references cliente(IDCliente);
 alter table clientepremio add foreign key(IDPremio) references premio(IDPremio);
