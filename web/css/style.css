@@ -171,6 +171,25 @@ html{
     font-size: 30px;
 }
 
+#advise{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 0px;
+    font-size: 25px;
+    color: lightgrey;
+    font-weight: 500;
+    text-align: center;
+    text-justify: inter-word;
+}
+
+#aviso{
+    padding-top: 31%;
+}
+
+#delete{
+    margin-top: 30px;
+}
+
 #titleis2{
     margin: 0;
     padding-bottom: 0px;
@@ -204,6 +223,19 @@ html{
     padding-bottom: 10px;
 }
 
+#cardpa{
+    padding: 0;
+    padding-bottom: 20px;
+    display: none; 
+}
+
+#cardpb{
+    padding: 0;
+    padding-bottom: 5.8cm;
+    background-color: #d87d8c;
+    display: none;
+}
+
 #cardtop{
     background-color: #C0CA33;
     padding-top: 20px;
@@ -211,6 +243,15 @@ html{
 }
 
 #datos{
+    padding-bottom: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 17px;
+    color: dimgray;
+}
+
+#datos2{
+    padding-top: 5px;
     padding-bottom: 10px;
     margin-left: 100px;
     margin-right: 100px;
@@ -310,6 +351,13 @@ html{
     margin-bottom: 30px;
 }
 
+#editar2{
+    height: 120px;
+    width: 120px;
+    background-color: #889fe8;
+    margin-bottom: 30px;
+}
+
 #borrartext{
     margin: 19px 0px 30px 0px;
     font-size: 45px;
@@ -321,12 +369,16 @@ html{
     background-color: #d87d8c;
 }
 
+#borrar2{
+    height: 90px;
+    width: 90px;
+    background-color: #d87d8c;
+}
+
 #bloque{
-    padding: 0px;
-    margin-top: 20%;
-    margin-bottom: 15%;
-    margin-left: 300px;
-    margin-right: 0px;
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 0;
 }
 
 #opciones{
@@ -340,6 +392,7 @@ html{
     font-weight: 300;
     text-transform: capitalize;
     display: none;
+    
 }
 
 #editartext2{
@@ -351,6 +404,20 @@ html{
     display: none;
 }
 
+#editartext3{
+    margin: 33px 0px 40px 0px;
+    font-size: 60px;
+    display: none;
+}
+
+#editartext4{
+    margin: 33px 0px 40px 0px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
 #borrartext2{
     margin: 19px 0px 30px 0px;
     font-size: 15px;
@@ -359,7 +426,21 @@ html{
     text-transform: capitalize;
     display: none;
 }
+
+#borrartext3{
+    margin: 19px 0px 30px 0px;
+    font-size: 45px;
+    display: none;
+}
     
+#borrartext4{
+    margin: 19px 0px 30px 0px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
 #compras:hover #comprastext{
     display: none;
 }
@@ -376,6 +457,14 @@ html{
     display: block;
 }
 
+#editar2:hover #editartext4{
+    display: none;
+}
+
+#editar2:hover #editartext3{
+    display: block;
+}
+
 #borrar:hover #borrartext{
     display: none;
 }
@@ -384,9 +473,25 @@ html{
     display: block;
 }
 
+#borrar2:hover #borrartext4{
+    display: none;
+}
+
+#borrar2:hover #borrartext3{
+    display: block;
+}
+
 #cuerpo{
     background-image: url(Background.jpg);
     background-position: center;
     background-repeat: repeat;
     background-size: 100% 100%;
+}
+
+#btn22{
+    display: none;
+}
+
+#btn32{
+    display: none;
 }
