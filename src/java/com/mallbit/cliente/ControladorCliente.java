@@ -199,9 +199,9 @@ public class ControladorCliente extends HttpServlet {
         String apellido = request.getParameter("apellido");
         String usuario = request.getParameter("usuario");
         String correo = request.getParameter("correo");
-        int telefono = 0;
+        long telefono = 0;
         if (!request.getParameter("telefono").equals("")) {
-            telefono = Integer.parseInt(request.getParameter("telefono"));
+            telefono = Long.parseLong(request.getParameter("telefono"));
         }
         String password = request.getParameter("password");
         Cliente cliente = new Cliente(nombre, apellido, correo, 0, telefono, usuario, password, null, 0);

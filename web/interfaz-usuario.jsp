@@ -19,30 +19,32 @@
     </head>
 
     <body id="cuerpo">
-        <!--# NOTE: Comienza parte mostrar barra navegaciÃ³n.-->
-        <div id="primera" class="scrollspy">
-            <nav class="pushpin-nav z-depth-0" data-target="primera">
-                <div class="nav-wrapper lime darken-1" id="sombra">
-                    <div class="col s12">
-                        <div id="principal-nav">
-                            <a href="#" class="brand-logo"><i class="material-icons">shopping_basket</i>MallBIT</a>
-                            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                                <li><a href="index.jsp" onclick="<% session.invalidate(); %>"><i class="material-icons left">exit_to_app</i>Salir</a></li>
-                            </ul>
-                        </div>
+        <!--# NOTE: Comienza parte mostrar barra navegación.-->
+        <nav>
+            <div class="nav-wrapper lime darken-1" id="sombra">
+                <div class="col s12">
+                    <div id="principal-nav">
+                        <a href="index.jsp" class="brand-logo"><i class="material-icons">shopping_basket</i>MallBIT</a>
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="index.jsp" onclick="<% session.invalidate(); %>"><i class="material-icons left">exit_to_app</i>Salir</a></li>
+                        </ul>
                     </div>
                 </div>
-            </nav>
+            </div>
+        </nav>
 
-            <div style="height: 64px;"></div>
-        </div>
-        <%  
+        <div style="height: 64px;"></div>
+        <%
             Cliente interfaz = null;
-            
-            if(request.getAttribute("ClienteInterfazS") != null){interfaz = (Cliente)request.getAttribute("ClienteInterfazS");}
-            if(request.getAttribute("ClienteInterfazA") != null){interfaz = (Cliente)request.getAttribute("ClienteInterfazA");}
-            
-            String nombre = interfaz.getNombre()+" "+interfaz.getApellido();
+
+            if (request.getAttribute("ClienteInterfazS") != null) {
+                interfaz = (Cliente) request.getAttribute("ClienteInterfazS");
+            }
+            if (request.getAttribute("ClienteInterfazA") != null) {
+                interfaz = (Cliente) request.getAttribute("ClienteInterfazA");
+            }
+
+            String nombre = interfaz.getNombre() + " " + interfaz.getApellido();
         %>   
         <div class="row">
             <div class="col s8" >
@@ -75,7 +77,7 @@
                             </div>
                             <div id="datapair">
                                 <p id="datatitle"><b>Género</b></p>
-                                <div class="right-align" id="data"><% if(interfaz.getIdGenero()==1){%>Masculino<%}else{%>Femenino<%}%></div>
+                                <div class="right-align" id="data"><% if (interfaz.getIdGenero() == 1) {%>Masculino<%} else {%>Femenino<%}%></div>
                             </div>
                         </div>
                         <div id="puntos">
@@ -160,10 +162,10 @@
                 </div>
             </div>      
         </div>
-                        
+
         <!--Scripts de Interfaz-->
         <script>
-            function mostrarEditar(){
+            function mostrarEditar() {
                 var x = document.getElementById("cardp");
                 var y = document.getElementById("cardpa");
                 var z = document.getElementById("btn2");
@@ -177,7 +179,7 @@
                 u.style.display = "none";
                 v.style.display = "none";
             }
-            function mostrarEditar2(){
+            function mostrarEditar2() {
                 var x = document.getElementById("cardp");
                 var y = document.getElementById("cardpa");
                 var z = document.getElementById("btn2");
@@ -191,7 +193,7 @@
                 u.style.display = "block";
                 v.style.display = "block";
             }
-            function mostrarBorrar(){
+            function mostrarBorrar() {
                 var x = document.getElementById("cardp");
                 var y = document.getElementById("cardpb");
                 var z = document.getElementById("btn3");
@@ -205,7 +207,7 @@
                 u.style.display = "none";
                 v.style.display = "none";
             }
-            function mostrarBorrar2(){
+            function mostrarBorrar2() {
                 var x = document.getElementById("cardp");
                 var y = document.getElementById("cardpb");
                 var z = document.getElementById("btn3");

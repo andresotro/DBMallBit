@@ -18,7 +18,7 @@
 
     <body id="cuerpo" class="lime darken-1">
         
-        <nav class="pushpin-nav" data-target="primera">
+        <nav>
             <div class="nav-wrapper lime darken-1">
                 <div class="col s12">
                     <div id="principal-nav">
