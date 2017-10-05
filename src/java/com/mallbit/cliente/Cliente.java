@@ -13,14 +13,14 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private String correo;
-    private int identificacion;
-    private int telefono;
+    private long identificacion;
+    private long telefono;
     private String usuario;
     private String contraseña;
     private Date fechaNacimiento;
     private int idGenero;
 
-    public Cliente(int id, String nombre, String apellido, String correo, int identificacion, int telefono, String usuario, String contraseña, Date fechaNacimiento, int idGenero) {
+    public Cliente(int id, String nombre, String apellido, String correo, long identificacion, long telefono, String usuario, String contraseña, Date fechaNacimiento, int idGenero) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -33,7 +33,7 @@ public class Cliente {
         this.idGenero = idGenero;
     }
 
-    public Cliente(String nombre, String apellido, String correo, int identificacion, int telefono, String usuario, String contraseña, Date fechaNacimiento, int idGenero) {
+    public Cliente(String nombre, String apellido, String correo, long identificacion, long telefono, String usuario, String contraseña, Date fechaNacimiento, int idGenero) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
@@ -77,7 +77,7 @@ public class Cliente {
         this.correo = correo;
     }
     
-    public int getIdentificacion() {
+    public long getIdentificacion() {
         return identificacion;
     }
 
@@ -85,7 +85,7 @@ public class Cliente {
         this.identificacion = identificacion;
     }
 
-    public int getTelefono() {
+    public long getTelefono() {
         return telefono;
     }
 

@@ -64,8 +64,8 @@ public class ModeloCliente {
 	        preparedStatement.setString(1, cliente.getNombre());
 	        preparedStatement.setString(2, cliente.getApellido());
 	        preparedStatement.setString(3, cliente.getCorreo());
-                preparedStatement.setInt(4, cliente.getIdentificacion());
-                preparedStatement.setInt(5, cliente.getTelefono());
+                preparedStatement.setLong(4, cliente.getIdentificacion());
+                preparedStatement.setLong(5, cliente.getTelefono());
 	        preparedStatement.setString(6, cliente.getUsuario());
 	        preparedStatement.setString(7, cliente.getContraseña());
 	        SimpleDateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd");
