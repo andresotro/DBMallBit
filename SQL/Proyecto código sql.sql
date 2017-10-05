@@ -15,19 +15,19 @@ create table cliente(
     Primary Key(IDCliente)
 );
 create table genero(
-    IDGenero int(11) not null, 
+    IDGenero int(11) not null auto_increment, 
     Tipo varchar(100) not null, 
     Primary Key(IDGenero)
 );
 create table compra(
-    IDCompra int(11) not null, 
+    IDCompra int(11) not null auto_increment, 
     IDPago int(11), 
     IDCliente int(11),
     IDProducto int(11), 
     Primary Key(IDCompra)
 );
 create table producto(
-    IDProducto int(11) not null, 
+    IDProducto int(11) not null auto_increment, 
     Nombre varchar(100) not null,
     Precio int not null, 
     IDLocal int(11), 
@@ -36,19 +36,19 @@ create table producto(
     Primary Key(IDProducto)
 );
 create table categoria(
-    IDCategoria int(11) not null, 
+    IDCategoria int(11) not null auto_increment, 
     Categoria varchar(100) not null, 
     Primary Key(IDCategoria)
 );
 create table local(
-    IDLocal int(11) not null, 
+    IDLocal int(11) not null auto_increment, 
     Nombre varchar(100) not null, 
     IDVendedor int(11), 
     Descripcion varchar(100) not null, 
     Primary Key(IDLocal)
 );
 create table vendedor(
-    IDVendedor int(11) not null, 
+    IDVendedor int(11) not null auto_increment, 
     Nombre varchar(100) not null,
     Apellido varchar(100) not null, 
     FechaNacimiento date not null, 
@@ -61,7 +61,7 @@ create table vendedor(
     Primary Key(IDVendedor)
 );
 create table envio(
-    IDEnvio int(11) not null, 
+    IDEnvio int(11) not null auto_increment, 
     FechaEnvio date not null, 
     Descripcion varchar(100) not null, 
     IDEstado int(11), 
@@ -70,17 +70,17 @@ create table envio(
     Primary Key(IDEnvio)
 );
 create table estado(
-    IDEstado int(11) not null, 
+    IDEstado int(11) not null auto_increment, 
     Estado varchar(100) not null, 
     Primary Key(IDEstado)
 );
 create table pago(
-    IDPago int(11) not null, 
+    IDPago int(11) not null auto_increment, 
     FechaPago date not null, 
     Primary Key(IDPago)
 );
 create table administrador(
-    IDAdministrador int(11) not null, 
+    IDAdministrador int(11) not null auto_increment, 
     Nombre varchar(100) not null, 
     Identificacion int(11) not null unique, 
     FechaNacimiento date not null, 
@@ -89,7 +89,7 @@ create table administrador(
     Primary Key(IDAdministrador)
 );
 create table premio(
-    IDPremio int(11) not null, 
+    IDPremio int(11) not null auto_increment, 
     Nombre varchar(100) not null, 
     Descripcion varchar(100) not null, 
     IDAdministrador int(11), 

@@ -95,7 +95,7 @@ public class ControladorVendedor extends HttpServlet {
 
             String existe = "";
 
-            //Se verifica si existe otro cliente con ese Usuario
+            //Se verifica si existe otro vendedor con ese Usuario
             List<Vendedor> vendedores = modeloVendedor.obtenerVendedoresDB();
             for (Vendedor vendedor : vendedores) {
                 if (vendedor.getUsuario().equals(usuario)) {
@@ -109,10 +109,9 @@ public class ControladorVendedor extends HttpServlet {
             //Enviar objeto al modelo para guardar en la Base de Datos
             modeloVendedor.agregarVendedorDB(vendedor);
             HttpSession session = request.getSession();
-            session.setAttribute("CLIENTE_SESSION", vendedor);
+            //session.setAttribute("CLIENTE_SESSION", vendedor);
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
             requestDispatcher.forward(request, response);
-            /*}*/
 
         } catch (Exception ex) {
             ex.printStackTrace();

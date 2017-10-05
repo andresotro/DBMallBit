@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col s10">
                             <p style="font-size: 30px" id="titleis">Inicio de sesión</p>
-                            <p style="font-size: 15px" id="subtitleis">Acceder a MallBIT</p><br>
+                            <p style="font-size: 15px" id="subtitleis">Acceder como cliente a MallBIT</p><br>
                         </div>
                         <div class="col s1">
                             <i class="material-icons left" id="personas">people</i>
@@ -71,7 +71,10 @@
                 <% }%>
                 <% }%>
                 <div class="center-align" id="register">
-                    ¿No tienes una cuenta?<a href="ControladorGenero"> Regístrate</a>
+                    ¿No tienes una cuenta?
+                    <a href="ControladorGenero?instruccion=generoCliente">
+                        Regístrate
+                    </a>
                 </div>
                 <br>
 

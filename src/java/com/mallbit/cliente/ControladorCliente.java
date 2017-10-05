@@ -1,15 +1,11 @@
 package com.mallbit.cliente;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.sql.*;
 
 @WebServlet("/ControladorCliente")
 public class ControladorCliente extends HttpServlet {
@@ -35,7 +30,7 @@ public class ControladorCliente extends HttpServlet {
         //Leer parametro (value) del input hidden del formulario
         String parametro = request.getParameter("instruccion");
 
-        //Ejecutar m�todo seg�n valor del parametro
+        //Ejecutar método según valor del parametro
         switch (parametro) {
             case "listarClientes":
                 listarClientesDB(request, response);
@@ -175,12 +170,12 @@ public class ControladorCliente extends HttpServlet {
                     break;
                 case "incorrecto":
                     request.setAttribute("RESULTADO", estado);
-                    RequestDispatcher requestDispatcherI = request.getRequestDispatcher("/iniciar-sesion.jsp");
+                    RequestDispatcher requestDispatcherI = request.getRequestDispatcher("/iniciar-sesion-cliente.jsp");
                     requestDispatcherI.forward(request, response);
                     break;
                 case "indefinido":
                     request.setAttribute("RESULTADO", estado);
-                    RequestDispatcher requestDispatcherC = request.getRequestDispatcher("/iniciar-sesion.jsp");
+                    RequestDispatcher requestDispatcherC = request.getRequestDispatcher("/iniciar-sesion-cliente.jsp");
                     requestDispatcherC.forward(request, response);
                     break;
             }

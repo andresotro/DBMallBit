@@ -1,7 +1,12 @@
-<%@page import="com.mallbit.genero.Genero"%>
-<%@page import="java.util.*"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%-- 
+    Document   : registro-vendedor
+    Created on : Oct 5, 2017, 11:51:52 AM
+    Author     : Andres Ramos
+--%>
 
+<%@page import="java.util.List"%>
+<%@page import="com.mallbit.genero.Genero"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" style="overflow-y: auto">
 
@@ -13,7 +18,7 @@
         <link type="text/css" rel="stylesheet" href="css/materialize.css"/>
 
         <meta charset="UTF-8">
-        <title>Registro Cliente</title>
+        <title>Registro Vendedor</title>
     </head>
 
     <body id="cuerpo" class="lime darken-1">
@@ -34,16 +39,14 @@
                 <div class="row">
                     <div class="col s10">
                         <p style="font-size: 30px" id="titleis">Registro vendedor</p>
-                        <p style="font-size: 15px" id="subtitleis">Acceder como cliente a MallBIT</p><br>
+                        <p style="font-size: 15px" id="subtitleis">Acceder como vendedor a MallBIT</p><br>
                     </div>
                     <div class="col s1">
                         <i class="material-icons left" id="personas">people</i>
                     </div>
                 </div>
-                <%String[] estado = (String[]) request.getAttribute("ESTADO"); %>
-                <%if (request.getAttribute("ESTADO") == null) {%>
-                <!--Formulario registro por primera vez--><form action="ControladorCliente" method="post" class="col s12">
-                    <input type="hidden" name="instruccion" value="insertarCliente"/>
+                    <form action="ControladorVendedor" method="post" class="col s12">
+                    <input type="hidden" name="instruccion" value="insertarVendedor"/>
                     <div class="row">
                         <div class="col s6 input-field">
                             <input id="nombre" name="nombre" type="text" class="validate">
@@ -102,65 +105,6 @@
                         </button>
                     </div>
                 </form> 
-                <%} else {%>
-                <div class="center-align">
-                    <p style="color: red">Ese usuario ya existe.</p>
-                </div>
-                <!--Formulario registro si usuario ya existe con datos previos--><form action="ControladorCliente" method="post" class="col s12">
-                    <input type="hidden" name="instruccion" value="insertarCliente"/>
-                    <div class="row">
-                        <div class="col s6 input-field">
-                            <input id="nombre" name="nombre" type="text" class="validate" value="<%= estado[1]%>">
-                        </div>
-                        <div class="col s6 input-field">
-                            <input id="apellido" name="apellido" type="text" class="validate" value="<%= estado[2]%>">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col s6 input-field">
-                            <input id="correo" name="correo" type="text" class="validate" value="<%= estado[3]%>">
-                        </div>
-                        <div class="col s6 input-field">
-                            <input id="fecha" name="fechaNacimiento" type="text" class="datepicker" value="<%= estado[5]%>">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s6 input-field">
-                            <input id="identificacion" name="identificacion" type="tel" maxlength="11" class="validate">
-                            <label for="identificacion">N° identificación</label>
-                        </div>
-                        <div class="col s6 input-field">
-                            <input id="telefono" name="telefono" maxlength="10" type="tel"  maxlength="10"  class="validate">
-                            <label for="telefono">Teléfono</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s4 input-field">
-                            <input id="usuario" name="usuario" type="text" class="validate" >
-                            <label for="usuario">Usuario</label>
-                        </div>
-
-                        <div class="col s4 input-field">
-                            <input id="contraseña" name="password" type="password" class="validate" value="<%= estado[4]%>">
-                        </div>
-                        <div class="input-field col s4">
-                            <select name="genero">
-                                <option value="" disabled selected>Género</option>
-                                <% List<Genero> generos = (List<Genero>) request.getAttribute("LISTAGENEROS"); %>
-                                <% for (Genero g : generos) {%>
-                                <option value="<%= g.getIdGenero()%>"><%= g.getGenero()%></option>
-                                <% }%>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="center-align">
-                        <button class="btn waves-effect waves-light lime lighten-2 black-text" type="submit" name="action">
-                            Registrar
-                        </button>
-                    </div>
-                </form> 
-                <% }%>
             </div>
 
         </div>
