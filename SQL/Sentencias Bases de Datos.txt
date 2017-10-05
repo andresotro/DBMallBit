@@ -105,6 +105,11 @@ create table clientepremio(
     Primary Key(IDPremio, IDCliente)
 );
 
+insert into genero(IDGenero, Genero)
+values (1, "Masculino");
+insert into genero(IDGenero, Genero)
+values (2, "Femenino");
+
 insert into vendedor(Nombre, Apellido, FechaNacimiento, Correo, Identificacion, Telefono, Usuario, Password, IDGenero)
 values ("Fabian","Perez","1969-10-31","fape@gmail.com",1078097326, 3123352714, "FabianPe", "1234", 1);
 insert into vendedor(Nombre, Apellido, FechaNacimiento, Correo, Identificacion, Telefono, Usuario, Password, IDGenero)
