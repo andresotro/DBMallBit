@@ -34,8 +34,8 @@ public class ModeloCliente {
 	            String nombre = resultSet.getString("Nombre");
 	            String apellido = resultSet.getString("Apellido");
 	            String correo = resultSet.getString("Correo");
-                    int identificacion = resultSet.getInt("identificacion");
-                    int telefono = resultSet.getInt("telefono");
+                    long identificacion = resultSet.getLong("identificacion");
+                    long telefono = resultSet.getLong("telefono");
 	            String usuario = resultSet.getString("Usuario");
 	            String contraseña = resultSet.getString("Password");
 	            Date fechaNacimiento = resultSet.getDate("FechaNacimiento");
