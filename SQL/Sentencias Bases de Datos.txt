@@ -16,7 +16,7 @@ create table cliente(
 );
 create table genero(
     IDGenero int(11) not null, 
-    Tipo varchar(100) not null, 
+    Genero varchar(100) not null, 
     Primary Key(IDGenero)
 );
 create table compra(
