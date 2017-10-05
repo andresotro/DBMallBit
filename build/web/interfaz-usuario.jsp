@@ -1,7 +1,8 @@
+<%@page import="java.util.Date"%>
 <%@page import="com.mallbit.cliente.*"%>
 <%@page import="java.util.List" %>
 <!DOCTYPE html>
-<html lang="en" style="overflow-y: hidden">
+<html lang="en">
 
     <head>
         <!--Import Google Icon Font-->
@@ -35,23 +36,20 @@
 
             <div style="height: 64px;"></div>
         </div>
-        <% ModeloCliente m = new ModeloCliente();
-            List<Cliente> clientes;
+        <%  
             Cliente interfaz = null;
-            clientes = m.obtenerClientesDB();
-            for(Cliente c : clientes){
-                if(c.getUsuario().equals(request.getParameter("nombre"))){
-                    interfaz = c;
-                    break;
-                }
-            }
+            
+            if(request.getAttribute("ClienteInterfazS") != null){interfaz = (Cliente)request.getAttribute("ClienteInterfazS");}
+            if(request.getAttribute("ClienteInterfazA") != null){interfaz = (Cliente)request.getAttribute("ClienteInterfazA");}
+            
+            String nombre = interfaz.getNombre()+" "+interfaz.getApellido();
         %>   
         <div class="row">
             <div class="col s8" >
                 <div class="block" id="bloque">
                     <div class="card-panel" id="cardp">
                         <div class="center-align" id="cardtop">
-                            <p id="titleis2">Alejandro Cubillos Perdigon</p>
+                            <p id="titleis2"><%= nombre%></p>
                             <p id="subtitleis2">Cliente</p><br>
                         </div>
                         <div id="datos">
@@ -94,6 +92,7 @@
                     <div class="card-panel" id="cardpa">
                         <form action="ControladorCliente" method="post">
                             <input type="hidden" name="instruccion" value="actualizarCliente"/>
+                            <input type="hidden" name="usuario" value="<%= interfaz.getUsuario()%>">
                             <div class="center-align" id="cardtop">
                                 <p id="titleis2" class="center-align">Actualización de Datos</p>
                                 <p id="subtitleis2" class="center-align"><%= interfaz.getUsuario()%></p><br>
@@ -130,6 +129,7 @@
                     <div class="card-panel" id="cardpb">
                         <form action="ControladorCliente" method="post">
                             <input type="hidden" name="instruccion" value="borrarCliente"/>
+                            <input type="hidden" name="usuario" value="<%= interfaz.getUsuario()%>">
                             <div class="center-align" id="aviso">
                                 <p id="advise" class="center-align">¿Estas seguro/a que deseas eliminar esta cuenta? Una vez eliminada ningún dato podrá ser recuperado.</p>
                             </div>
