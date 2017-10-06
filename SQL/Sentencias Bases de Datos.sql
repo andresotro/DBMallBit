@@ -12,6 +12,7 @@ create table cliente(
     Usuario varchar(50) not null, 
     Password varchar(50),
     IDGenero int(11),
+    Puntos int(5) not null DEFAULT 0,
     Primary Key(IDCliente)
 );
 create table genero(
