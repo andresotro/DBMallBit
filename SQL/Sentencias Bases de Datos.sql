@@ -12,11 +12,12 @@ create table cliente(
     Usuario varchar(50) not null, 
     Password varchar(50),
     IDGenero int(11),
+    Puntos int(5) not null DEFAULT 0,
     Primary Key(IDCliente)
 );
 create table genero(
     IDGenero int(11) not null, 
-    Tipo varchar(100) not null, 
+    Genero varchar(100) not null, 
     Primary Key(IDGenero)
 );
 create table compra(
@@ -104,6 +105,11 @@ create table clientepremio(
     IDCliente int(11), 
     Primary Key(IDPremio, IDCliente)
 );
+
+insert into genero(IDGenero, Genero)
+values (1, "Masculino");
+insert into genero(IDGenero, Genero)
+values (2, "Femenino");
 
 insert into vendedor(Nombre, Apellido, FechaNacimiento, Correo, Identificacion, Telefono, Usuario, Password, IDGenero)
 values ("Fabian","Perez","1969-10-31","fape@gmail.com",1078097326, 3123352714, "FabianPe", "1234", 1);
