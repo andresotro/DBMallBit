@@ -26,7 +26,7 @@
                         <div id="principal-nav">
                             <a href="#" class="brand-logo"><i class="material-icons">shopping_basket</i>MallBIT</a>
                             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                                <% Cliente cliente = (Cliente) session.getAttribute("CLIENTE_INDEX"); %>
+                                <% Cliente cliente = (Cliente) session.getAttribute("CLIENTE_SESSION"); %>
                                 <% if (cliente == null) { %>
                                 <li><a href="iniciar-sesion-cliente.jsp"><i class="material-icons left">people</i>Acceder</a></li>
                                 <li><a href="iniciar-sesion-vendedor.jsp"><i class="material-icons left">local_shipping</i>Vender</a></li>

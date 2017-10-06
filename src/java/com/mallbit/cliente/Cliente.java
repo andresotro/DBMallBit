@@ -19,6 +19,7 @@ public class Cliente {
     private String contraseña;
     private Date fechaNacimiento;
     private int idGenero;
+    private int puntos;
 
     public Cliente(int id, String nombre, String apellido, String correo, long identificacion, long telefono, String usuario, String contraseña, Date fechaNacimiento, int idGenero) {
         this.id = id;
@@ -31,6 +32,20 @@ public class Cliente {
         this.contraseña = contraseña;
         this.fechaNacimiento = fechaNacimiento;
         this.idGenero = idGenero;
+    }
+
+    public Cliente(int id, String nombre, String apellido, String correo, long identificacion, long telefono, String usuario, String contraseña, Date fechaNacimiento, int idGenero, int puntos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.identificacion = identificacion;
+        this.telefono = telefono;
+        this.usuario = usuario;
+        this.contraseña = contraseña;
+        this.fechaNacimiento = fechaNacimiento;
+        this.idGenero = idGenero;
+        this.puntos = puntos;
     }
 
     public Cliente(String nombre, String apellido, String correo, long identificacion, long telefono, String usuario, String contraseña, Date fechaNacimiento, int idGenero) {
@@ -52,7 +67,7 @@ public class Cliente {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -76,12 +91,12 @@ public class Cliente {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-    
+
     public long getIdentificacion() {
         return identificacion;
     }
 
-    public void setIdentificacion(int identificacion) {
+    public void setIdentificacion(long identificacion) {
         this.identificacion = identificacion;
     }
 
@@ -89,7 +104,7 @@ public class Cliente {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
 
@@ -124,7 +139,19 @@ public class Cliente {
     public void setIdGenero(int idGenero) {
         this.idGenero = idGenero;
     }
-    
-    
+
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", identificacion=" + identificacion + ", telefono=" + telefono + ", usuario=" + usuario + ", contrase\u00f1a=" + contraseña + ", fechaNacimiento=" + fechaNacimiento + ", idGenero=" + idGenero + ", puntos=" + puntos + '}';
+    }
+
 }
   

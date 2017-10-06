@@ -6,7 +6,6 @@
 package com.mallbit.vendedor;
 
 import com.mallbit.Conexion.ConexionDB;
-import com.mallbit.cliente.Cliente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -87,4 +86,54 @@ public class ModeloVendedor {
 
         preparedStatement.execute();
     }
+    
+        public void actualizarVendedorDB(Vendedor vendedor) throws SQLException {
+        Connection connection;
+        PreparedStatement nombre;
+        PreparedStatement apellido;
+        PreparedStatement telefono;
+        PreparedStatement correo;
+        PreparedStatement password;
+
+        //Establecer la conexión
+        connection = ConexionDB.conectar();
+
+        //Crear sentencia SQL y statement en caso de que los valores no sean nulos y ejecutar
+        if (!vendedor.getNombre().equals("")) {
+            String sentenciaNombre = "UPDATE vendedor SET Nombre=? WHERE Usuario=?";
+            nombre = connection.prepareStatement(sentenciaNombre);
+            nombre.setString(1, vendedor.getNombre());
+            nombre.setString(2, vendedor.getUsuario());
+            nombre.executeUpdate();
+        }
+        if (!vendedor.getApellido().equals("")) {
+            String sentenciaApellido = "UPDATE vendedor SET Apellido=? WHERE Usuario=?";
+            apellido = connection.prepareStatement(sentenciaApellido);
+            apellido.setString(1, vendedor.getApellido());
+            apellido.setString(2, vendedor.getUsuario());
+            apellido.executeUpdate();
+        }
+        if (vendedor.getTelefono() != 0) {
+            String sentenciaTelefono = "UPDATE vendedor SET Telefono=? WHERE Usuario=?";
+            telefono = connection.prepareStatement(sentenciaTelefono);
+            telefono.setLong(1, vendedor.getTelefono());
+            telefono.setString(2, vendedor.getUsuario());
+            telefono.executeUpdate();
+        }
+        if (!vendedor.getCorreo().equals("")) {
+            String sentenciaCorreo = "UPDATE vendedor SET Correo=? WHERE Usuario=?";
+            correo = connection.prepareStatement(sentenciaCorreo);
+            correo.setString(1, vendedor.getCorreo());
+            correo.setString(2, vendedor.getUsuario());
+            correo.executeUpdate();
+        }
+        if (!vendedor.getContraseña().equals("")) {
+            String sentenciaPassword = "UPDATE vendedor SET Password=? WHERE Usuario=?";
+            password = connection.prepareStatement(sentenciaPassword);
+            password.setString(1, vendedor.getContraseña());
+            password.setString(2, vendedor.getUsuario());
+            password.executeUpdate();
+        }
+    }
 }
+

@@ -18,9 +18,9 @@
         <title>Iniciar Sesión</title>
     </head>
 
-    <body id="cuerpo">
+    <body id="cuerpov">
         <nav class="pushpin-nav" data-target="primera">
-            <div class="nav-wrapper lime darken-1">
+            <div class="nav-wrapper" id="navV">
                 <div class="col s12">
                     <div id="principal-nav">
                         <a href="index.jsp" class="brand-logo center"><i class="material-icons">shopping_basket</i>MallBIT</a>
@@ -52,7 +52,7 @@
                         <label for="contraseña">Contraseña</label>
                     </div>
                     <div class="center-align">
-                        <button class="waves-effect waves-light btn lime lighten-2 black-text" type="submit">Iniciar sesión</button>
+                        <button class="waves-effect waves-light btn black-text" type="submit" id="navV">Iniciar sesión</button>
                     </div>
                 </form>
                 <br>

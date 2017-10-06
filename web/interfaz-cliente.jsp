@@ -50,7 +50,7 @@
             <div class="col s8" >
                 <div class="block" id="bloque">
                     <div class="card-panel" id="cardp">
-                        <div class="center-align" id="cardtop">
+                        <div class="center-align" id="cardtopv">
                             <p id="titleis2"><%= nombre%></p>
                             <p id="subtitleis2">Cliente</p><br>
                         </div>
@@ -86,7 +86,7 @@
                                     <p id="p1">MallBITs</p>
                                 </div>
                                 <div class="col s0" id="pointscount">
-                                    <p id="p2" class="center-align">10</p>
+                                    <p id="p2" class="center-align"><%= interfaz.getPuntos()%></p>
                                 </div>
                             </div>
                         </div>

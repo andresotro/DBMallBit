@@ -237,11 +237,16 @@ html{
 }
 
 #cardtop{
-    background-color: #C0CA33;
+    background-color: #3c84ba;
     padding-top: 20px;
     margin-bottom: 0;
 }
 
+#cardtopv{
+    background-color: #C0CA33;
+    padding-top: 20px;
+    margin-bottom: 0;
+}
 #datos{
     padding-bottom: 10px;
     margin-left: 100px;
@@ -488,10 +493,25 @@ html{
     background-size: 100% 100%;
 }
 
+#cuerpov{
+    background-image: url(BackgroundV.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 100% 100%;
+}
+
 #btn22{
     display: none;
 }
 
 #btn32{
     display: none;
+}
+
+#navV{
+    background-color: #3c84ba;
+}
+
+.navV{
+    background-color: #3c84ba;
 }

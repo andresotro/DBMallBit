@@ -171,8 +171,8 @@ public class ControladorCliente extends HttpServlet {
 
             switch (estado) {
                 case "correcto":
-                    HttpSession session = request.getSession(false);
-                    session.setAttribute("CLIENTE_INDEX", c);
+                    HttpSession session = request.getSession();
+                    session.setAttribute("CLIENTE_SESSION", c);
                     RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
                     requestDispatcher.forward(request, response);
                     break;
@@ -219,7 +219,7 @@ public class ControladorCliente extends HttpServlet {
             }
 
             request.setAttribute("ClienteInterfazA", buscado);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/interfaz-usuario.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/interfaz-cliente.jsp");
             requestDispatcher.forward(request, response);
 
         } catch (Exception ex) {
@@ -239,7 +239,7 @@ public class ControladorCliente extends HttpServlet {
                 }
             }
             request.setAttribute("ClienteInterfazS", c);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/interfaz-usuario.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/interfaz-cliente.jsp");
             requestDispatcher.forward(request, response);
         } catch (Exception ex) {
             ex.printStackTrace();
